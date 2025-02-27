@@ -141,6 +141,8 @@ public class Main {
 
  */
 
+/*
+
 import java.util.Scanner;
 
 public class Main {
@@ -189,9 +191,69 @@ default -> System.out.println("Selección inválida. Intente de nuevo.");
             System.out.println("No tiene money.");
         } else {
             double cambio = dineroIngresado - totalCompra;
-            System.out.printl("Compra exitosa! Su cambio es: , cambio);
+            System.out.printlf("Compra exitosa! Su cambio es: , cambio);
         }
 
         scanner.close();
+    }
+}
+
+ */
+
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        Random random = new Random();
+
+        int puntosJugador1 = 0;
+        int puntosJugador2 = 0;
+
+        while (puntosJugador1 < 2 && puntosJugador2 < 2) {
+
+            int eleccionJugador1 = random.nextInt(3) + 1;
+            int eleccionJugador2 = random.nextInt(3) + 1;
+
+                         System.out.print("Jugador1 elige: ");
+              switch (eleccionJugador1) {
+                  case 1 -> System.out.println("Piedra");
+                        case 2 -> System.out.println("Papel");
+                                case 3 -> System.out.println("Tijera");
+            }
+
+                            System.out.print("Jugador2 elige: ");
+                              switch (eleccionJugador2) {
+                                   case 1 -> System.out.println("Piedra");
+                                   case 2 -> System.out.println("Tijera");
+                                          case 3 -> System.out.println("Papel");
+            }
+
+
+                    if (eleccionJugador1 == eleccionJugador2) {
+                System.out.println("EMPATARON");
+
+
+            } else if ((eleccionJugador1 == 1 && eleccionJugador2 == 3) ||
+                    (eleccionJugador1 == 2 && eleccionJugador2 == 1) ||
+                    (eleccionJugador1 == 3 && eleccionJugador2 == 2))
+
+            {
+                System.out.println("Jugador 1 ganooo La ronda");
+                puntosJugador1++;
+            } else {
+                System.out.println("Jugador 2 gana la ronda");
+                puntosJugador2++;
+            }
+
+            System.out.println("Puntos - Jugador 1: " + puntosJugador1 + " | Jugador 2: " + puntosJugador2);
+            System.out.println();
+        }
+
+
+        if (puntosJugador1 == 2) {
+            System.out.println("Jugador1 GANA LA PARTIDA ");
+        } else {
+            System.out.println("jUGADOR2 GANA LA PARTIDA");
+        }
     }
 }
